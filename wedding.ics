@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Shannan and Robert Wedding//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:shannan-robert-wedding-20270802@wedding.local
+DTSTAMP:20260823T000000Z
+DTSTART:20270802T120000Z
+DTEND:20270802T220000Z
+SUMMARY:Shannan & Robert's Wedding
+DESCRIPTION:We can't wait to celebrate with you! Ceremony and reception at Bilsington Priory.
+LOCATION:Bilsington Priory\, Bilsington\, Ashford\, Kent\, TN25 7AU
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

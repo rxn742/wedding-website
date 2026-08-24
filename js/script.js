@@ -1,10 +1,9 @@
 // Shannan & Robert — Wedding Site
-// Placeholder ceremony time is used below (13:00-23:00) until the real time is confirmed.
-// Update WEDDING_START / WEDDING_END when times are finalised (also update wedding.ics).
+// Ceremony starts 2:00 PM, carriages at 11:30 PM (also reflected in wedding.ics).
 
 document.addEventListener('DOMContentLoaded', function () {
-  var WEDDING_START = new Date('2027-08-02T13:00:00+01:00');
-  var WEDDING_END = new Date('2027-08-02T23:00:00+01:00');
+  var WEDDING_START = new Date('2027-08-02T14:00:00+01:00');
+  var WEDDING_END = new Date('2027-08-02T23:30:00+01:00');
 
   /* ---------- Mobile nav toggle ---------- */
   var navToggle = document.getElementById('navToggle');
@@ -107,5 +106,22 @@ document.addEventListener('DOMContentLoaded', function () {
   if (guestCount) {
     guestCount.addEventListener('change', updateGuestFields);
     updateGuestFields();
+  }
+
+  /* ---------- RSVP: require at least one of email or phone ---------- */
+  var emailField = document.getElementById('email');
+  var phoneField = document.getElementById('phone');
+
+  if (emailField && phoneField) {
+    function validateContactMethod() {
+      if (!emailField.value.trim() && !phoneField.value.trim()) {
+        emailField.setCustomValidity('Please enter an email address or a phone number.');
+      } else {
+        emailField.setCustomValidity('');
+      }
+    }
+    emailField.addEventListener('input', validateContactMethod);
+    phoneField.addEventListener('input', validateContactMethod);
+    validateContactMethod();
   }
 });
